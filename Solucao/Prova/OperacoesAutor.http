@@ -1,0 +1,29 @@
+@base_url = http://localhost:5188
+@id = 1cde10cc-bcb4-43f2-83bf-e85497d59fef
+
+### cadastrar
+POST {{base_url}}/api/autor/cadastrar
+Content-Type: application/json
+
+{
+    "Nome" : "Evandro Zatti",
+    "DataNascimento" : "2024-11-01T10:30:00"
+}
+
+### listar
+GET {{base_url}}/api/autor/listar
+
+### buscar
+GET {{base_url}}/api/autor/buscar/{{id}}
+
+### editar
+PUT {{base_url}}/api/autor/editar/{{id}}
+Content-Type: application/json
+
+{
+    "Nome" : "Cassenote",
+    "DataNascimento" : "2024-11-01T10:30:00"
+}
+
+### deletar
+DELETE {{base_url}}/api/autor/deletar/{{id}}

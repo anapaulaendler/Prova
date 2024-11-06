@@ -1,0 +1,34 @@
+@base_url = http://localhost:5188
+@id = bf95d69b-0a58-4220-9a41-c1a7cf9542f5
+
+### cadastrar
+POST {{base_url}}/api/livro/cadastrar
+Content-Type: application/json
+
+{
+    "Titulo" : "A Casa Das Folhas", 
+    "AnoPublicacao" : 2000, 
+    "AutorId" : "5bb3003d-689e-4b4c-bc83-0a499ff15c18"
+}
+
+### listar
+GET {{base_url}}/api/livro/listar
+
+### buscar
+GET {{base_url}}/api/livro/buscar/{{id}}
+
+### editar
+PUT {{base_url}}/api/livro/editar/{{id}}
+Content-Type: application/json
+
+{
+    "Titulo" : "O Bebê de Rosemary", 
+    "AnoPublicacao" : 2000, 
+    "Autor" : {
+        "Nome" : "Gabriel Garcia Marquez", 
+        "DataNascimento" : "2024-11-01T10:30:00"
+    }
+}
+
+### deletar
+DELETE {{base_url}}/api/livro/deletar/{{id}}
