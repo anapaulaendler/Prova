@@ -1,0 +1,89 @@
+@base_url = http://localhost:5188
+@id = 76f2ebbf-cf51-4828-8c98-fe3c41b8573a
+
+### cadastrar
+POST {{base_url}}/api/produto/cadastrar/lista
+Content-Type: application/json
+
+[
+    {
+        "Nome": "Smartwatch Fitness",
+        "Descricao": "Relógio inteligente com monitoramento cardíaco e GPS.",
+        "Preco": 699.90,
+        "Quantidade": 35,
+        "Fornecedor": {
+            "Nome": "TechLife",
+            "Contato": "support@techlife.com",
+            "Endereco": "Rua das Inovações, 123, Cidade Futura"
+        }
+    },
+    {
+        "Nome": "Cafeteira Elétrica",
+        "Descricao": "Cafeteira com capacidade de 1,5L e função de desligamento automático.",
+        "Preco": 199.90,
+        "Quantidade": 50,
+        "Fornecedor": {
+            "Nome": "CoffeeWorld",
+            "Contato": "contato@coffeeworld.com",
+            "Endereco": "Av. dos Baristas, 456, Cidade Aroma"
+        }
+    },
+    {
+        "Nome": "Ventilador de Mesa",
+        "Descricao": "Ventilador com 3 velocidades e oscilação automática.",
+        "Preco": 149.99,
+        "Quantidade": 60,
+        "Fornecedor": {
+            "Nome": "ClimaPlus",
+            "Contato": "atendimento@climaplus.com",
+            "Endereco": "Rua das Brisas, 789, Cidade Fresca"
+        }
+    },
+    {
+        "Nome": "Fogão 4 Bocas",
+        "Descricao": "Fogão com acendimento automático e forno com iluminação.",
+        "Preco": 899.90,
+        "Quantidade": 20,
+        "Fornecedor": {
+            "Nome": "Cozinha Moderna",
+            "Contato": "sac@cozinhamoderna.com",
+            "Endereco": "Av. das Receitas, 101, Cidade Saborosa"
+        }
+    },
+    {
+        "Nome": "Geladeira Duplex",
+        "Descricao": "Geladeira com freezer e sistema frost free.",
+        "Preco": 2999.99,
+        "Quantidade": 10,
+        "Fornecedor": {
+            "Nome": "RefrigerarBem",
+            "Contato": "contato@refrigerarbem.com",
+            "Endereco": "Estrada Fria, 202, Cidade Polar"
+        }
+    }
+]
+
+### /api/produto/listar
+GET {{base_url}}/api/produto/listar
+
+### /api/produto/buscar/{id}
+GET {{base_url}}/api/produto/buscar/{{id}}
+
+### /api/produto/alterar/
+PUT {{base_url}}/api/produto/alterar/{{id}}
+Content-Type: application/json
+
+    {
+        "Nome": "AAAA",
+        "Descricao": "AAAAAAAAAAAAAAAAA.",
+        "Preco": 44.90,
+        "Quantidade": 5555,
+        "Fornecedor": {
+            "Nome": "aaaaaa",
+            "Contato": "support@aaaaaa.com",
+            "Endereco": "Rua das Inovações, 123, Cidade Futura"
+        }
+    }
+
+### deletar
+DELETE {{base_url}}/api/produto/deletar/{{id}}

@@ -1,0 +1,78 @@
+@base_url = http://localhost:5188
+@id = 539200b0-3ce9-4d51-9c5a-92dda7d87acd
+
+### cadastrar lista
+POST {{base_url}}/api/fornecedor/cadastrar/lista
+Content-Type: application/json
+
+[
+    {
+        "Nome": "Ana Silva",
+        "Contato": "ana.silva@example.com",
+        "Endereco": "123 Main St, City A"
+    },
+    {
+        "Nome": "Carlos Pereira",
+        "Contato": "carlos.pereira@example.com",
+        "Endereco": "456 Elm St, City B"
+    },
+    {
+        "Nome": "Beatriz Santos",
+        "Contato": "beatriz.santos@example.com",
+        "Endereco": "789 Maple St, City C"
+    },
+    {
+        "Nome": "Daniel Oliveira",
+        "Contato": "daniel.oliveira@example.com",
+        "Endereco": "101 Oak St, City D"
+    },
+    {
+        "Nome": "Eduardo Souza",
+        "Contato": "eduardo.souza@example.com",
+        "Endereco": "202 Pine St, City E"
+    },
+    {
+        "Nome": "Fernanda Costa",
+        "Contato": "fernanda.costa@example.com",
+        "Endereco": "303 Cedar St, City F"
+    },
+    {
+        "Nome": "Gabriel Rocha",
+        "Contato": "gabriel.rocha@example.com",
+        "Endereco": "404 Birch St, City G"
+    },
+    {
+        "Nome": "Helena Ribeiro",
+        "Contato": "helena.ribeiro@example.com",
+        "Endereco": "505 Walnut St, City H"
+    },
+    {
+        "Nome": "Isabela Almeida",
+        "Contato": "isabela.almeida@example.com",
+        "Endereco": "606 Chestnut St, City I"
+    },
+    {
+        "Nome": "João Carvalho",
+        "Contato": "joao.carvalho@example.com",
+        "Endereco": "707 Redwood St, City J"
+    }
+]
+
+### listar
+GET {{base_url}}/api/fornecedor/listar
+
+### buscar
+GET {{base_url}}/api/fornecedor/buscar/{{id}}
+
+### editar
+PUT {{base_url}}/api/fornecedor/alterar/{{id}}
+Content-Type: application/json
+
+  {
+    "nome": "Ribeiro Helena",
+    "contato": "ribeiro.helena@example.com",
+    "endereco": "505 Walnut St, City H"
+  }
+
+### deletar
+DELETE {{base_url}}/api/fornecedor/deletar/{{id}}

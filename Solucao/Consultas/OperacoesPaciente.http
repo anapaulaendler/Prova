@@ -1,0 +1,65 @@
+@base_url = http://localhost:5219
+@id = 0cab3f43-7272-4eaf-8372-e13f9f15847b
+
+### cadastrar
+POST {{base_url}}/api/paciente/cadastrar/lista
+Content-Type: application/json
+
+[
+    {
+        "Nome": "Ana Maria Silva",
+        "Idade": 45,
+        "Sexo": "F",
+        "Telefone": "(11) 91234-5678",
+        "Endereco": "Rua das Flores, 123, São Paulo, SP"
+    },
+    {
+        "Nome": "Carlos Alberto Souza",
+        "Idade": 32,
+        "Sexo": "M",
+        "Telefone": "(21) 97865-4321",
+        "Endereco": "Avenida Brasil, 456, Rio de Janeiro, RJ"
+    },
+    {
+        "Nome": "Beatriz Oliveira",
+        "Idade": 27,
+        "Sexo": "F",
+        "Telefone": "(31) 98574-2314",
+        "Endereco": "Rua dos Pássaros, 789, Belo Horizonte, MG"
+    },
+    {
+        "Nome": "José Pereira",
+        "Idade": 60,
+        "Sexo": "M",
+        "Telefone": "(41) 99987-1234",
+        "Endereco": "Praça das Águas, 10, Curitiba, PR"
+    },
+    {
+        "Nome": "Luciana Fernandes",
+        "Idade": 52,
+        "Sexo": "F",
+        "Telefone": "(71) 98865-4321",
+        "Endereco": "Rua Bahia, 321, Salvador, BA"
+    }
+]
+
+### listar
+GET {{base_url}}/api/paciente/listar
+
+### buscar
+GET {{base_url}}/api/paciente/buscar/{{id}}
+
+### editar
+PUT {{base_url}}/api/paciente/editar/{{id}}
+Content-Type: application/json
+
+{
+  "nome": "Luciana Fernandes",
+  "idade": 53,
+  "sexo": "F",
+  "telefone": "(71) 98865-4321",
+  "endereco": "Rua Bahia, 321, Salvador, BA"
+}
+
+### deletar
+DELETE {{base_url}}/api/paciente/deletar/{{id}}

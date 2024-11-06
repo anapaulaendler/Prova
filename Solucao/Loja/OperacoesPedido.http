@@ -1,0 +1,122 @@
+@base_url = http://localhost:5188
+@id = 3df61409-e8c3-4f9e-a6ed-98b229844f3a
+
+### cadastrar
+POST {{base_url}}/api/pedido/cadastrar/lista
+Content-Type: application/json
+
+[
+    {
+        "Produto": {
+            "Nome": "Smartwatch Fitness",
+            "Descricao": "Relógio inteligente com monitoramento cardíaco e GPS.",
+            "Preco": 699.90,
+            "Quantidade": 35,
+            "Fornecedor": {
+                "Nome": "TechLife",
+                "Contato": "support@techlife.com",
+                "Endereco": "Rua das Inovações, 123, Cidade Futura"
+            }
+        },
+        "Quantidade": 2,
+        "DataPedido": "2024-11-01T10:30:00",
+        "Status": true
+    },
+    {
+        "Produto": {
+            "Nome": "Cafeteira Elétrica",
+            "Descricao": "Cafeteira com capacidade de 1,5L e função de desligamento automático.",
+            "Preco": 199.90,
+            "Quantidade": 50,
+            "Fornecedor": {
+                "Nome": "CoffeeWorld",
+                "Contato": "contato@coffeeworld.com",
+                "Endereco": "Av. dos Baristas, 456, Cidade Aroma"
+            }
+        },
+        "Quantidade": 1,
+        "DataPedido": "2024-11-02T14:45:00",
+        "Status": false
+    },
+    {
+        "Produto": {
+            "Nome": "Ventilador de Mesa",
+            "Descricao": "Ventilador com 3 velocidades e oscilação automática.",
+            "Preco": 149.99,
+            "Quantidade": 60,
+            "Fornecedor": {
+                "Nome": "ClimaPlus",
+                "Contato": "atendimento@climaplus.com",
+                "Endereco": "Rua das Brisas, 789, Cidade Fresca"
+            }
+        },
+        "Quantidade": 3,
+        "DataPedido": "2024-11-03T09:00:00",
+        "Status": true
+    },
+    {
+        "Produto": {
+            "Nome": "Fogão 4 Bocas",
+            "Descricao": "Fogão com acendimento automático e forno com iluminação.",
+            "Preco": 899.90,
+            "Quantidade": 20,
+            "Fornecedor": {
+                "Nome": "Cozinha Moderna",
+                "Contato": "sac@cozinhamoderna.com",
+                "Endereco": "Av. das Receitas, 101, Cidade Saborosa"
+            }
+        },
+        "Quantidade": 1,
+        "DataPedido": "2024-11-04T11:15:00",
+        "Status": true
+    },
+    {
+        "Produto": {
+            "Nome": "Geladeira Duplex",
+            "Descricao": "Geladeira com freezer e sistema frost free.",
+            "Preco": 2999.99,
+            "Quantidade": 10,
+            "Fornecedor": {
+                "Nome": "RefrigerarBem",
+                "Contato": "contato@refrigerarbem.com",
+                "Endereco": "Estrada Fria, 202, Cidade Polar"
+            }
+        },
+        "Quantidade": 1,
+        "DataPedido": "2024-11-05T08:45:00",
+        "Status": false
+    }
+]
+
+### listar
+GET {{base_url}}/api/pedido/listar
+
+### buscar
+GET {{base_url}}/api/pedido/buscar/{{id}}
+
+### editar
+PUT {{base_url}}/api/pedido/alterar/{{id}}
+Content-Type: application/json
+
+    {
+        "Produto": {
+            "Nome": "Smartwatch Fitness",
+            "Descricao": "Relógio inteligente com monitoramento cardíaco e GPS.",
+            "Preco": 699.90,
+            "Quantidade": 35,
+            "Fornecedor": {
+                "Nome": "TechLife",
+                "Contato": "support@techlife.com",
+                "Endereco": "Rua das Inovações, 123, Cidade Futura"
+            }
+        },
+        "Quantidade": 10,
+        "DataPedido": "2024-11-01T10:30:00",
+        "Status": true
+    }
+
+### deletar
+DELETE {{base_url}}/api/pedido/deletar/{{id}}
+
+### pedidos ativos encontrar
+GET {{base_url}}/api/pedido/ativo

@@ -1,0 +1,86 @@
+@base_url = http://localhost:5219
+@id = 59e73f54-6bed-4dd5-a51d-7d9afeb4c44b
+
+### cadastrar
+POST {{base_url}}/api/consulta/cadastrar/lista
+Content-Type: application/json
+
+[
+    {
+        "PacienteId": "1195f82f-9497-45bb-b017-ac6d17b65e07",
+        "DataConsulta": "2024-01-15T10:30:00",
+        "Medico": "Dr. Carlos Monteiro",
+        "Diagnostico": "Hipertensão",
+        "Tratamento": "Uso de anti-hipertensivo e dieta balanceada"
+    },
+    {
+        "PacienteId": "18f5ce13-a2fa-49db-a574-4626a6b289fc",
+        "DataConsulta": "2024-02-20T15:00:00",
+        "Medico": "Dra. Mariana Andrade",
+        "Diagnostico": "Gripe",
+        "Tratamento": "Repouso e uso de analgésicos"
+    },
+    {
+        "PacienteId": "ce1e9c8a-534b-408d-bd42-9e280e8ce1eb",
+        "DataConsulta": "2024-03-12T09:00:00",
+        "Medico": "Dr. João Lima",
+        "Diagnostico": "Diabetes tipo 2",
+        "Tratamento": "Controle de glicose e dieta específica"
+    },
+    {
+        "PacienteId": "d002c1e3-8b12-4204-8734-713a0c6dc558",
+        "DataConsulta": "2024-04-05T11:45:00",
+        "Medico": "Dra. Fernanda Souza",
+        "Diagnostico": "Ansiedade",
+        "Tratamento": "Terapia cognitivo-comportamental e medicação ansiolítica"
+    },
+    {
+        "PacienteId": "1195f82f-9497-45bb-b017-ac6d17b65e07",
+        "DataConsulta": "2024-05-22T16:00:00",
+        "Medico": "Dr. Carlos Monteiro",
+        "Diagnostico": "Colesterol alto",
+        "Tratamento": "Dieta com baixo teor de gordura e exercícios físicos"
+    },
+    {
+        "PacienteId": "18f5ce13-a2fa-49db-a574-4626a6b289fc",
+        "DataConsulta": "2024-06-18T08:30:00",
+        "Medico": "Dra. Mariana Andrade",
+        "Diagnostico": "Sinusite",
+        "Tratamento": "Antibiótico e inalação"
+    },
+    {
+        "PacienteId": "ce1e9c8a-534b-408d-bd42-9e280e8ce1eb",
+        "DataConsulta": "2024-07-10T13:15:00",
+        "Medico": "Dr. João Lima",
+        "Diagnostico": "Artrite",
+        "Tratamento": "Anti-inflamatórios e fisioterapia"
+    },
+    {
+        "PacienteId": "d002c1e3-8b12-4204-8734-713a0c6dc558",
+        "DataConsulta": "2024-08-25T10:00:00",
+        "Medico": "Dra. Fernanda Souza",
+        "Diagnostico": "Depressão leve",
+        "Tratamento": "Terapia semanal e suporte medicamentoso"
+    }
+]
+
+### listar
+GET {{base_url}}/api/consulta/listar
+
+### buscar
+GET {{base_url}}/api/consulta/buscar/{{id}}
+
+### editar
+PUT {{base_url}}/api/consulta/editar/{{id}}
+Content-Type: application/json 
+
+{
+  "pacienteId": "18f5ce13-a2fa-49db-a574-4626a6b289fc",
+  "dataConsulta": "2025-02-20T15:00:00",
+  "medico": "Dra. Mariana Andrade",
+  "diagnostico": "Gripe",
+  "tratamento": "Repouso e uso de analgésicos"
+}
+
+### deletar
+DELETE {{base_url}}/api/consulta/deletar/{{id}}
